@@ -9,5 +9,7 @@ class RandomAds extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
+
 }
 

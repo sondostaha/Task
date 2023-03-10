@@ -22,7 +22,7 @@ class PostsTableSeed extends Seeder
             Posts::create([
                 'user_id'=>User::inRandomOrder()->first()->id,
                 'body'=>$fake->paragraph(),
-                'img'=>$fake->imageUrl($width = 50, $height = 50),
+                'img'=>$fake->imageUrl( 360, 360),
             ]);
 
         }

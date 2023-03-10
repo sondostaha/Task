@@ -26,7 +26,7 @@
                                         @endforeach
                                     
                                     </div>
-                                </div>random
+                                </div>
                               
                             </div>
                         </div>

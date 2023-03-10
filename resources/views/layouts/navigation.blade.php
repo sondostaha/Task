@@ -51,6 +51,10 @@
                             
                                 <x-dropdown-link :href="route('show.notf')">
                                     {{ __('Add some Friends') }}
+                                </x-dropdown-link>
+                                <x-dropdown-link :href="route('marketplace')">
+                                    {{ __('Marketplace') }}
+                                    
                             </x-dropdown-link>
                         </form>
                     </x-slot>

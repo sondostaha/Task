@@ -1,102 +1,47 @@
-@extends('layouts.master')
-@section('css')
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+           Welcome Back {{Auth::user()->name}}
+        </h2>
+    </x-slot>
 
-@section('title')
-   ADD Followers
-@stop
-
-<!-- Internal Data table css -->
-
-<link href="{{ URL::asset('assets/plugins/datatable/css/dataTables.bootstrap4.min.css') }}" rel="stylesheet" />
-<link href="{{ URL::asset('assets/plugins/datatable/css/buttons.bootstrap4.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('assets/plugins/datatable/css/responsive.bootstrap4.min.css') }}" rel="stylesheet" />
-<link href="{{ URL::asset('assets/plugins/datatable/css/jquery.dataTables.min.css') }}" rel="stylesheet">
-<link href="{{ URL::asset('assets/plugins/datatable/css/responsive.dataTables.min.css') }}" rel="stylesheet">
-<!--Internal   Notify -->
-<link href="{{ URL::asset('assets/plugins/notify/css/notifIt.css') }}" rel="stylesheet" />
-
-@endsection
-@section('page-header')
-<!-- breadcrumb -->
-<div class="breadcrumb-header justify-content-between">
-    <div class="my-auto">
-        <div class="d-flex">
-            <h4 class="content-title mb-0 my-auto">MAarket Place</h4><span class="text-muted mt-1 tx-13 mr-2 mb-0"> 
-                </span>
-        </div>
-    </div>
-</div>
-<!-- breadcrumb -->
-@endsection
-
-@section('content')
-
-
-<!-- row opened -->
-<div class="row row-sm">
-    <div class="col-xl-12">
-        <div class="card">
-            <div class="card-header pb-0">
-               
-            <div class="card-body">
-                <div class="table-responsive hoverable-table">
-                    @foreach ($market as $mark )
-                    <hr>
-                    <a href="{{$mark->link}}">
-                     <h3 >{{$mark->title}}</h3>
-                    </a>
-
-                    <img src="{{$mark->img}}"  class="card-img-top">
-                 
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
                     
-                   
-                </div>
+                            <div class="card">
+                                <div class="card-header pb-0">
+                                   
+                                <div class="card-body">
+                                    <div class="table-responsive hoverable-table">
+
+                                        <div class="table-responsive hoverable-table">
+                                            @php
+                                            $i =1
+                                            @endphp
+                                            @foreach ($market as $mark )
+                                            <hr>
+                                            <h1> product number :{{ $i++}}</h1>
+                                            <a href="{{$mark->link}}">
+                                            <h1>{{$mark->title}}</h1>
+                                            </a>
+                                          
+                                            <img src="{{$mark->img}}" class="card-img-top">
+                                         
+                                            
+                                           @endforeach
+                                        </div>
+                                    </div>
+                                </div>
+                              
+                            </div>
+                        </div>
+                        <!--/div-->
+                    <!-- /row -->
             </div>
-            @endforeach
+                    <!-- Container closed -->
         </div>
     </div>
-    <!--/div-->
 
-   
-</div>
-
-</div>
-<!-- /row -->
-</div>
-<!-- Container closed -->
-</div>
-<!-- main-content closed -->
-@endsection
-@section('js')
-<!-- Internal Data tables -->
-<script src="{{ URL::asset('assets/plugins/datatable/js/jquery.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/responsive.dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/jquery.dataTables.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.bootstrap4.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.buttons.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/dataTables.responsive.min.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/datatable/js/responsive.bootstrap4.min.js') }}"></script>
-<!--Internal  Datatable js -->
-<script src="{{ URL::asset('assets/js/table-data.js') }}"></script>
-<!--Internal  Notify js -->
-<script src="{{ URL::asset('assets/plugins/notify/js/notifIt.js') }}"></script>
-<script src="{{ URL::asset('assets/plugins/notify/js/notifit-custom.js') }}"></script>
-<!-- Internal Modal js-->
-<script src="{{ URL::asset('assets/js/modal.js') }}"></script>
-
-<script>
-    $('#modaldemo8').on('show.bs.modal', function(event) {
-        var button = $(event.relatedTarget)
-        var user_id = button.data('user_id')
-        var username = button.data('username')
-        var modal = $(this)
-        modal.find('.modal-body #user_id').val(user_id);
-        modal.find('.modal-body #username').val(username);
-    })
-
-</script>
-
-
-@endsection
+</x-app-layout>
