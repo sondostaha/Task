@@ -103,7 +103,7 @@
             </div>
                 <div class="modal-body">
                     <p class="text-center">
-                       <input type="text" name="user_id" id="user_id" value="">
+                       <input type="hidden" name="user_id" id="user_id" value="">
                     <h6 style="color:rgb(9, 53, 165)">Are you sure to follow this user as a friend</h6>
                     </p>
                 </div>
