@@ -15,17 +15,9 @@
                                    
                                 <div class="card-body">
                                     <div class="table-responsive hoverable-table">
-                                        
-                                        
 
-                                      
-                                        
-                                        
-                                       
-                                        
                                         @foreach ($posts as $post )
 
-                                        
                                         <h1>{{$users->name}}</h1>
                                         <h2>{{$post->user_id}}</h2>
                                         <hr>
