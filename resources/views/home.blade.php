@@ -9,32 +9,38 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    
+                    <div class="row row-sm">
+                        <div class="col-xl-12">
                             <div class="card">
                                 <div class="card-header pb-0">
                                    
                                 <div class="card-body">
                                     <div class="table-responsive hoverable-table">
-
                                         @foreach ($posts as $post )
+                                        <hr>
 
-                                        <h1>{{$users->name}}</h1>
-                                        <h2>{{$post->user_id}}</h2>
+                                        <h1>{{$post->user_id}}</h1>
                                         <hr>
                                         <p>{{$post->body}}</p>
                                         <img src="{{$post->img}}" class="card-img-top">
-                                        @endforeach
-                                    
+                                     
                                     </div>
-                                </div>random
-                              
+                                </div>
+                                @endforeach
                             </div>
                         </div>
                         <!--/div-->
+                    
+                       
+                    </div>
+                    
+                    </div>
                     <!-- /row -->
-            </div>
+                    </div>
                     <!-- Container closed -->
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </x-app-layout>

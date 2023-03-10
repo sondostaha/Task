@@ -6,6 +6,7 @@ use App\Http\Resources\PostResources;
 use App\Models\followers;
 use App\Models\Friends;
 use App\Models\Posts;
+use App\Models\RandomAds;
 use App\Models\User;
 use DB;
 use Illuminate\Http\Request;
@@ -60,6 +61,13 @@ class UsersController extends Controller
         ]);
         session()->flash('Add','now you are friends');
         return back();
+    }
+
+    public function marketplace()
+    {
+        $market = RandomAds::all();
+
+        return view('users.marketplace',compact('market'));
     }
 
 }

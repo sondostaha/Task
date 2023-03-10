@@ -34,7 +34,9 @@ Route::get('/Add_Friends',[UsersController::class,'show_frineds'])->name('show.n
 //add friend
 Route::post('/add_user/{id}',[UsersController::class ,'add_friends'])->name('add.frined');
 
-;
+//show marketplace 
+
+Route::get('/marketplace',[UsersController::class ,'marketplace'])->name('marketplace');
 
 //show posts of this friend
 Route::get('/user_posts/{id}',[UsersController::class ,'user_posts'])->name('user.posts');

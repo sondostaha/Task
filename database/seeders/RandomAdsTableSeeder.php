@@ -2,12 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Models\Posts;
-use App\Models\User;
+use App\Models\RandomAds;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class PostsTableSeed extends Seeder
+class RandomAdsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,14 +16,15 @@ class PostsTableSeed extends Seeder
     public function run()
     {
         $fake = \Faker\Factory::create();
+        
         for($i=1;$i<=20 ;$i++){
 
-            Posts::create([
-                'user_id'=>User::inRandomOrder()->first()->id,
-                'body'=>$fake->paragraph(),
-                'img'=>$fake->imageUrl($width = 50, $height = 50),
+            RandomAds::create([
+                'title'=>$fake->realText(150),
+                'link'=>$fake->url(),
+                'img'=>$fake->imageUrl( 360, 360, 'Market', true),
             ]);
 
-        }
     }
+}
 }
